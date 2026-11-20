@@ -20,7 +20,7 @@ const stageWallpaper = "/products/splitmic-stage-wallpaper.png";
 // Only supplied or verified URLs and original brand assets belong here.
 export const products: readonly Product[] = [
   {
-    id: "bookworm", name: "Bookworm AI", category: "AI + Education",
+    id: "bookworm", name: "Bookworm AI", category: "Education + AI Learning",
     headline: "Making every book smarter.",
     description: "Turn any book into a 7-day course.",
     capability: "AI-powered education and personalized learning systems.",
@@ -32,7 +32,7 @@ export const products: readonly Product[] = [
     theme: "bookworm",
   },
   {
-    id: "splitmic", name: "SplitMic", category: "Marketplace + Network",
+    id: "splitmic", name: "SplitMic", category: "Music + Industry Networking",
     headline: "Music Industry Connected.",
     description: "Connecting bands, venues, talent buyers, record labels and festivals on the same platform.",
     capability: "Multi-sided marketplaces, professional networks and discovery systems.",
@@ -44,7 +44,7 @@ export const products: readonly Product[] = [
     theme: "splitmic",
   },
   {
-    id: "six-plants", name: "Six Plants", category: "Health + Personalization",
+    id: "six-plants", name: "Six Plants", category: "Nutrition + Meal Planning",
     headline: "Healthy Eating Made Simple",
     description: "Get a 7-day meal plan with recipe and grocery list",
     capability: "Personalized consumer health, recommendation systems and structured planning tools.",
@@ -56,7 +56,7 @@ export const products: readonly Product[] = [
     theme: "plants",
   },
   {
-    id: "cash-flow-tracker", name: "Money Track", category: "Finance + Data",
+    id: "cash-flow-tracker", name: "Money Track", category: "Finance + Cash Flow Tracking",
     headline: "Every dollar counts.",
     description: "See income, expenses and account balances in one place.",
     capability: "Financial workflows, structured data, account allocation and business intelligence interfaces.",
