@@ -4,6 +4,7 @@ export const siteUrl = "https://www.godz-iagency.com";
 export const callUrl = "https://cal.com/christopher-downer-6pkxir/strategy-session";
 export const discoveryCallUrl = "https://cal.com/christopher-downer-6pkxir/discovery-call";
 export const contactEmail = "Christopher@godz-iagency.com";
+export const postLaunchSupport = "We offer around-the-clock support after launch, with ongoing maintenance, updates, and upgrades as your app or automation evolves.";
 
 // Nested pages do not inherit the root opengraph-image file, so they reference it directly.
 const shareImage = { url: "/opengraph-image", width: 1200, height: 630, alt: "GODZ-i. AI-powered apps. Use ours, or we build yours." };

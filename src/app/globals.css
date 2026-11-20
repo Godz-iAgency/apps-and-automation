@@ -375,7 +375,17 @@ body:has(.contact-dialog[open]) { overflow: hidden; }
 .contact-steps { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; margin: 1.25rem 0 0; padding: 0; list-style: none; counter-reset: step; }
 .contact-steps li { display: inline-flex; align-items: center; gap: .6rem; font-size: .875rem; font-weight: 500; color: #e4e4e7; counter-increment: step; }
 .contact-steps li::before { content: counter(step); display: inline-flex; align-items: center; justify-content: center; width: 1.6rem; height: 1.6rem; border: 1px solid #e8430a66; border-radius: 50%; color: #ff8a5c; font-size: .75rem; font-weight: 600; }
-.contact-guarantee { margin-top: 1.25rem; max-width: 44ch; padding-left: .9rem; border-left: 2px solid #e8430a66; color: var(--muted); font-size: .875rem; line-height: 1.6; }
+.contact-support {
+  margin-top: 1.25rem;
+  max-width: 48ch;
+  padding: .75rem .9rem;
+  border-inline-start: 2px solid #e8430aaa;
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(105deg, #e8430a19, #e8430a05);
+  color: #e0e0e5;
+  font-size: .875rem;
+  line-height: 1.6;
+}
 .contact .contact-call { margin-top: 1.25rem; }
 .contact .contact-address { display: flex; width: fit-content; min-height: 40px; margin-top: 0; }
 .breadcrumb { padding-top: 1.5rem; font-size: .75rem; color: var(--muted); }

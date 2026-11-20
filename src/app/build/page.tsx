@@ -2,10 +2,10 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Subpage } from "@/components/subpage";
 import { appPages, products } from "@/data/portfolio";
-import { discoveryCallUrl, pageMetadata, siteUrl } from "@/lib/site";
+import { discoveryCallUrl, pageMetadata, postLaunchSupport, siteUrl } from "@/lib/site";
 
 const title = "Custom AI App Development | GODZ-i";
-const description = "Custom AI apps built for your business and kept running. 30 days of free maintenance after delivery. Book a free 30 minute video call.";
+const description = "Custom AI apps built for your business and kept running. Around-the-clock support after launch. Book a free 30-minute video call.";
 
 export const metadata = pageMetadata({ title, description, path: "/build" });
 
@@ -18,7 +18,7 @@ const pains = [
 const method = [
   { title: "Build", text: "We scope it with you, then build it." },
   { title: "Launch", text: "We put it live and make sure it runs." },
-  { title: "Maintain", text: "30 days free, then ongoing maintenance if you want it." },
+  { title: "Maintain", text: "We offer ongoing maintenance, updates, and upgrades after launch." },
 ];
 
 const data = {
@@ -101,8 +101,8 @@ export default function BuildPage() {
         <div className="container page-cta-layout">
           <div>
             <p className="eyebrow">Custom builds only</p>
-            <h2 id="offer-heading">Our custom app guarantee.</h2>
-            <p className="section-description">30 days of free maintenance after delivery. Not happy with the final delivery? We keep working for 30 days until it&apos;s right. After that, ongoing maintenance is available.</p>
+            <h2 id="offer-heading">Support after launch.</h2>
+            <p className="section-description">{postLaunchSupport}</p>
           </div>
           <div>
             <p className="contact-offer">Start with a free 30 minute video call. You leave with a plan, hire us or not.</p>
