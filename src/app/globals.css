@@ -163,17 +163,41 @@ h2 { font-size: clamp(2rem, 3.6vw, 3.2rem); font-weight: 600; letter-spacing: -.
   mix-blend-mode: multiply;
 }
 .capability::after {
-  background: linear-gradient(108deg, var(--capability-center) 0%, var(--capability-center) 58%, #09090cad 81%, #09090c72 100%);
+  background:
+    linear-gradient(106deg, var(--capability-center) 8%, var(--capability-center) 43%, #09090c84 70%, transparent 100%),
+    var(--capability-pattern),
+    radial-gradient(ellipse at 100% 5%, var(--capability-glow), transparent 58%);
 }
-.capability-bookworm { --capability-accent: #6bdbef; --capability-center: #100b1bee; }
+.capability-bookworm {
+  --capability-accent: #6bdbef;
+  --capability-center: #10091deb;
+  --capability-glow: #9c32d77a;
+  --capability-pattern: repeating-radial-gradient(ellipse 130% 62% at 123% 6%, transparent 0 12px, #dc83ff75 13px, transparent 14px 23px);
+}
 .capability-splitmic {
   --capability-accent: #ff995e;
-  --capability-center: #170d09ee;
+  --capability-center: #180b08eb;
+  --capability-glow: #d445157a;
+  --capability-pattern: repeating-radial-gradient(ellipse 75% 140% at 135% 62%, transparent 0 9px, #ff823479 10px, transparent 11px 19px);
   --stage-edge-start: #ff641f;
   --stage-edge-end: #ff9b4a;
 }
-.capability-plants { --capability-accent: #b8df85; --capability-center: #0b160cee; }
-.capability-cashflow { --capability-accent: #e6d176; --capability-center: #12150bee; }
+.capability-plants {
+  --capability-accent: #b8df85;
+  --capability-center: #0b180beb;
+  --capability-glow: #51932d7a;
+  --capability-pattern:
+    repeating-radial-gradient(ellipse 58% 98% at 110% -20%, transparent 0 17px, #a6e76f72 18px, transparent 19px 29px),
+    repeating-radial-gradient(ellipse 63% 110% at 104% 129%, transparent 0 23px, #66b95b57 24px, transparent 25px 36px);
+}
+.capability-cashflow {
+  --capability-accent: #e6d176;
+  --capability-center: #141507eb;
+  --capability-glow: #ad731f7a;
+  --capability-pattern:
+    repeating-linear-gradient(90deg, transparent 0 17px, #edc66449 18px, transparent 19px 22px),
+    repeating-linear-gradient(0deg, transparent 0 17px, #edc66436 18px, transparent 19px 22px);
+}
 .capability-number { display: block; color: #d0d0d8; font-size: .75rem; font-variant-numeric: tabular-nums; }
 .capability h3 { font-size: 1.0625rem; font-weight: 600; letter-spacing: -.015em; line-height: 1.35; margin-bottom: .75rem; }
 .capability p { color: #d0d0d8; font-size: .9375rem; line-height: 1.65; max-width: 27ch; }
