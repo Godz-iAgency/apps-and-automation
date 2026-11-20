@@ -10,9 +10,16 @@ export function ProductCard({ product, index }: { product: Product; index: numbe
         {product.background && <Image src={product.background} alt="" fill sizes="(max-width: 640px) 90vw, (max-width: 1100px) 45vw, 580px" className="product-background" />}
         <div className="product-caption"><span>{product.category}</span><span aria-hidden="true">0{index + 1}</span></div>
         <div className="product-brand">
-          {product.artwork ? (
+          {product.coverText && product.logo ? (
+            <div className="product-cover-lockup" aria-hidden="true">
+              <Image src={product.logo.src} alt="" width={product.logo.width} height={product.logo.height}
+                sizes="144px" className="product-cover-mark" />
+              <p className="product-cover-title">{product.coverText.title}</p>
+              {product.coverText.tagline && <p className="product-cover-tagline">{product.coverText.tagline}</p>}
+            </div>
+          ) : product.artwork ? (
             <Image src={product.artwork.src} alt={product.artwork.alt} width={product.artwork.width} height={product.artwork.height}
-              sizes="(max-width: 640px) 85vw, (max-width: 1100px) 40vw, 540px" className="product-artwork" />
+              sizes="(max-width: 640px) 95vw, (max-width: 1300px) 47vw, 584px" className="product-artwork" />
           ) : product.logo ? (
             <Image src={product.logo.src} alt={`${product.name} logo`} width={product.logo.width} height={product.logo.height}
               sizes="(max-width: 640px) 80vw, 430px" className="product-logo" />

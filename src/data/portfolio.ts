@@ -10,6 +10,7 @@ export type Product = {
   logo: { src: string; width: number; height: number } | null;
   nameLogo?: { src: string; width: number; height: number };
   artwork?: { src: string; width: number; height: number; alt: string };
+  coverText?: { title: string; tagline?: string };
   background?: string;
   theme: "bookworm" | "splitmic" | "plants" | "cashflow";
 };
@@ -24,8 +25,7 @@ export const products: readonly Product[] = [
     features: ["AI-generated courses", "Multiple reading levels", "AI book assistant", "Flashcards", "Multilingual learning", "Book clubs"],
     url: "https://bookworm-ai.app/",
     logo: { src: "/products/bookworm-original-mark.png", width: 1254, height: 1254 },
-    artwork: { src: "/products/bookworm-poster.png", width: 1080, height: 1350, alt: "Bookworm AI. Making every book smarter. Turn your favorite book into a 7-day learning experience." },
-    background: "/products/bookworm-wallpaper.png",
+    coverText: { title: "Bookworm AI", tagline: "Making every book smarter." },
     theme: "bookworm",
   },
   {
@@ -49,7 +49,6 @@ export const products: readonly Product[] = [
     url: "https://www.gbombs.app/",
     logo: { src: "/products/six-plants-logo.png", width: 1024, height: 1024 },
     artwork: { src: "/products/six-plants-food-art.png", width: 2065, height: 761, alt: "Six Plants lettering made from colorful plant foods." },
-    background: "/products/six-plants-wallpaper.png",
     theme: "plants",
   },
   {
@@ -60,8 +59,7 @@ export const products: readonly Product[] = [
     features: ["Income tracking", "Expense tracking", "Account balances", "Account allocation", "Transfers", "Personal vs. business classification", "Cash-flow visibility"],
     url: "https://cash-flow-tracker-godz-i.vercel.app/",
     logo: { src: "/products/cash-flow-original.png", width: 1254, height: 1254 },
-    artwork: { src: "/products/money-track-portrait-hd.png", width: 940, height: 1672, alt: "MoneyTrack. Every dollar counts. A banknote and gold bars above clear teal water, a central stone and circular ripples over pebbles." },
-    background: "/products/cash-flow-water.webp",
+    coverText: { title: "MoneyTrack", tagline: "Every dollar counts." },
     theme: "cashflow",
   },
 ];
