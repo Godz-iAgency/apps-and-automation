@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Subpage } from "@/components/subpage";
 import { appPages, products } from "@/data/portfolio";
-import { callUrl, pageMetadata, siteUrl } from "@/lib/site";
+import { discoveryCallUrl, pageMetadata, siteUrl } from "@/lib/site";
 
 const title = "Custom AI App Development | GODZ-i";
 const description = "Custom AI apps built for your business and kept running. 30 days of free maintenance after delivery. Book a free 30 minute video call.";
@@ -39,7 +39,7 @@ const data = {
 };
 
 function CallButton() {
-  return <a href={callUrl} className="button button-accent" target="_blank" rel="noopener noreferrer">Book a Free Call <ArrowUpRight size={17} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>;
+  return <a href={discoveryCallUrl} className="button button-accent" target="_blank" rel="noopener noreferrer">Book a Free Call <ArrowUpRight size={17} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>;
 }
 
 export default function BuildPage() {

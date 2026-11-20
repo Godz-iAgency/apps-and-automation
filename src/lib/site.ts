@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 export const siteUrl = "https://www.godz-iagency.com";
 export const callUrl = "https://cal.com/christopher-downer-6pkxir/strategy-session";
+export const discoveryCallUrl = "https://cal.com/christopher-downer-6pkxir/discovery-call";
 export const contactEmail = "Christopher@godz-iagency.com";
 
 // Nested pages do not inherit the root opengraph-image file, so they reference it directly.

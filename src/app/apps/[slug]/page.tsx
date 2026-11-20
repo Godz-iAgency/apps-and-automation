@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Subpage } from "@/components/subpage";
 import { appPages, products } from "@/data/portfolio";
-import { callUrl, pageMetadata, siteUrl } from "@/lib/site";
+import { discoveryCallUrl, pageMetadata, siteUrl } from "@/lib/site";
 
 export const dynamicParams = false;
 
@@ -87,7 +87,7 @@ export default async function AppPage({ params }: { params: Promise<{ slug: stri
             <p className="section-description">We build it and keep it running. Start with a free video call.</p>
           </div>
           <div className="hero-actions">
-            <a href={callUrl} className="button button-accent" target="_blank" rel="noopener noreferrer">Book a Free Call <ArrowUpRight size={17} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>
+            <a href={discoveryCallUrl} className="button button-accent" target="_blank" rel="noopener noreferrer">Book a Free Call <ArrowUpRight size={17} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>
             <Link href="/build" className="hero-contact">How We Build <ArrowRight size={17} aria-hidden="true" /></Link>
           </div>
         </div>
