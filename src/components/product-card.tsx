@@ -10,16 +10,25 @@ export function ProductCard({ product, index }: { product: Product; index: numbe
         {product.background && <Image src={product.background} alt="" fill sizes="(max-width: 640px) 90vw, (max-width: 1100px) 45vw, 580px" className="product-background" />}
         <div className="product-caption"><span>{product.category}</span><span aria-hidden="true">0{index + 1}</span></div>
         <div className="product-brand">
-          {product.artwork ? (
-            <Image src={product.artwork.src} alt={product.artwork.alt} width={product.artwork.width} height={product.artwork.height}
-              sizes="(max-width: 640px) 85vw, (max-width: 1100px) 40vw, 540px" className="product-artwork" />
-          ) : product.logo ? (
-            <Image src={product.logo.src} alt={`${product.name} logo`} width={product.logo.width} height={product.logo.height}
-              sizes="(max-width: 640px) 80vw, 430px" className="product-logo" />
-          ) : (
-            // Plain text until the exact product logo is supplied; no substitute branding.
-            <p className="product-name-display">{product.name}</p>
-          )}
+          <div className="product-cover-lockup">
+            {product.coverTitle && product.logo ? (
+              <>
+                <Image src={product.logo.src} alt="" width={product.logo.width} height={product.logo.height}
+                  sizes="144px" className="product-cover-mark" />
+                <p className="product-cover-title" aria-hidden="true">{product.coverTitle}</p>
+              </>
+            ) : product.artwork ? (
+              <Image src={product.artwork.src} alt={product.artwork.alt} width={product.artwork.width} height={product.artwork.height}
+                sizes="(max-width: 640px) 95vw, (max-width: 1300px) 47vw, 584px" className="product-artwork" />
+            ) : product.logo ? (
+              <Image src={product.logo.src} alt={`${product.name} logo`} width={product.logo.width} height={product.logo.height}
+                sizes="(max-width: 640px) 80vw, 430px" className="product-logo" />
+            ) : (
+              // Plain text until the exact product logo is supplied; no substitute branding.
+              <p className="product-name-display">{product.name}</p>
+            )}
+            <p className="product-cover-tagline" aria-hidden="true">{product.headline}</p>
+          </div>
         </div>
       </div>
       <div className="product-copy">

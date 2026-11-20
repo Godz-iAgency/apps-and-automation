@@ -10,9 +10,12 @@ export type Product = {
   logo: { src: string; width: number; height: number } | null;
   nameLogo?: { src: string; width: number; height: number };
   artwork?: { src: string; width: number; height: number; alt: string };
+  coverTitle?: string;
   background?: string;
   theme: "bookworm" | "splitmic" | "plants" | "cashflow";
 };
+
+const stageWallpaper = "/products/splitmic-stage-wallpaper.png";
 
 // Only supplied or verified URLs and original brand assets belong here.
 export const products: readonly Product[] = [
@@ -24,8 +27,8 @@ export const products: readonly Product[] = [
     features: ["AI-generated courses", "Multiple reading levels", "AI book assistant", "Flashcards", "Multilingual learning", "Book clubs"],
     url: "https://bookworm-ai.app/",
     logo: { src: "/products/bookworm-original-mark.png", width: 1254, height: 1254 },
-    artwork: { src: "/products/bookworm-poster.png", width: 1080, height: 1350, alt: "Bookworm AI. Making every book smarter. Turn your favorite book into a 7-day learning experience." },
-    background: "/products/bookworm-wallpaper.png",
+    coverTitle: "Bookworm AI",
+    background: stageWallpaper,
     theme: "bookworm",
   },
   {
@@ -37,7 +40,7 @@ export const products: readonly Product[] = [
     url: "https://www.splitmic.com/",
     logo: { src: "/products/splitmic.png", width: 1024, height: 1024 },
     nameLogo: { src: "/products/splitmic-mark.png", width: 1024, height: 1024 },
-    background: "/products/splitmic-stage-wallpaper.png",
+    background: stageWallpaper,
     theme: "splitmic",
   },
   {
@@ -49,7 +52,7 @@ export const products: readonly Product[] = [
     url: "https://www.gbombs.app/",
     logo: { src: "/products/six-plants-logo.png", width: 1024, height: 1024 },
     artwork: { src: "/products/six-plants-food-art.png", width: 2065, height: 761, alt: "Six Plants lettering made from colorful plant foods." },
-    background: "/products/six-plants-wallpaper.png",
+    background: stageWallpaper,
     theme: "plants",
   },
   {
@@ -60,18 +63,18 @@ export const products: readonly Product[] = [
     features: ["Income tracking", "Expense tracking", "Account balances", "Account allocation", "Transfers", "Personal vs. business classification", "Cash-flow visibility"],
     url: "https://cash-flow-tracker-godz-i.vercel.app/",
     logo: { src: "/products/cash-flow-original.png", width: 1254, height: 1254 },
-    artwork: { src: "/products/money-track-portrait-hd.png", width: 940, height: 1672, alt: "MoneyTrack. Every dollar counts. A banknote and gold bars above clear teal water, a central stone and circular ripples over pebbles." },
-    background: "/products/cash-flow-water.webp",
+    coverTitle: "MoneyTrack",
+    background: stageWallpaper,
     theme: "cashflow",
   },
 ];
 
 // Short card copy on the homepage. Each card opens its app page at /apps/[slug].
 export const capabilities = [
-  { slug: "bookworm-ai", name: "AI + Education", headline: "Readers who forget what they read.", description: "AI builds the course. Daily lessons, assignments and flashcards make it stick.", theme: "bookworm", background: "/descriptions/bookworm.png" },
-  { slug: "splitmic", name: "Marketplace + Network", headline: "Anyone in Austin's music scene.", description: "Search by role, genre or name. Message anyone. Free to join.", theme: "splitmic", background: "/descriptions/splitmic.png" },
-  { slug: "six-plants", name: "Health + Personalization", headline: "Home cooks who want to eat healthier.", description: "Pick the plants you like. It builds the meals for you.", theme: "plants", background: "/descriptions/plants.png" },
-  { slug: "cash-flow-tracker", name: "Finance + Data", headline: "People who track every dollar.", description: "Every bank account, card and transfer in one private view.", theme: "cashflow", background: "/descriptions/cashflow.png" },
+  { slug: "bookworm-ai", name: "AI + Education", headline: "Readers who forget what they read.", description: "AI builds the course. Daily lessons, assignments and flashcards make it stick.", theme: "bookworm", background: stageWallpaper },
+  { slug: "splitmic", name: "Marketplace + Network", headline: "Anyone in Austin's music scene.", description: "Search by role, genre or name. Message anyone. Free to join.", theme: "splitmic", background: stageWallpaper },
+  { slug: "six-plants", name: "Health + Personalization", headline: "Home cooks who want to eat healthier.", description: "Pick the plants you like. It builds the meals for you.", theme: "plants", background: stageWallpaper },
+  { slug: "cash-flow-tracker", name: "Finance + Data", headline: "People who track every dollar.", description: "Every bank account, card and transfer in one private view.", theme: "cashflow", background: stageWallpaper },
 ] as const;
 
 export type AppPage = {
