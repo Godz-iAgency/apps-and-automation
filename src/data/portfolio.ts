@@ -10,10 +10,12 @@ export type Product = {
   logo: { src: string; width: number; height: number } | null;
   nameLogo?: { src: string; width: number; height: number };
   artwork?: { src: string; width: number; height: number; alt: string };
-  coverText?: { title: string; tagline?: string };
+  coverTitle?: string;
   background?: string;
   theme: "bookworm" | "splitmic" | "plants" | "cashflow";
 };
+
+const stageWallpaper = "/products/splitmic-stage-wallpaper.png";
 
 // Only supplied or verified URLs and original brand assets belong here.
 export const products: readonly Product[] = [
@@ -25,7 +27,8 @@ export const products: readonly Product[] = [
     features: ["AI-generated courses", "Multiple reading levels", "AI book assistant", "Flashcards", "Multilingual learning", "Book clubs"],
     url: "https://bookworm-ai.app/",
     logo: { src: "/products/bookworm-original-mark.png", width: 1254, height: 1254 },
-    coverText: { title: "Bookworm AI", tagline: "Making every book smarter." },
+    coverTitle: "Bookworm AI",
+    background: stageWallpaper,
     theme: "bookworm",
   },
   {
@@ -37,7 +40,7 @@ export const products: readonly Product[] = [
     url: "https://www.splitmic.com/",
     logo: { src: "/products/splitmic.png", width: 1024, height: 1024 },
     nameLogo: { src: "/products/splitmic-mark.png", width: 1024, height: 1024 },
-    background: "/products/splitmic-stage-wallpaper.png",
+    background: stageWallpaper,
     theme: "splitmic",
   },
   {
@@ -49,6 +52,7 @@ export const products: readonly Product[] = [
     url: "https://www.gbombs.app/",
     logo: { src: "/products/six-plants-logo.png", width: 1024, height: 1024 },
     artwork: { src: "/products/six-plants-food-art.png", width: 2065, height: 761, alt: "Six Plants lettering made from colorful plant foods." },
+    background: stageWallpaper,
     theme: "plants",
   },
   {
@@ -59,7 +63,8 @@ export const products: readonly Product[] = [
     features: ["Income tracking", "Expense tracking", "Account balances", "Account allocation", "Transfers", "Personal vs. business classification", "Cash-flow visibility"],
     url: "https://cash-flow-tracker-godz-i.vercel.app/",
     logo: { src: "/products/cash-flow-original.png", width: 1254, height: 1254 },
-    coverText: { title: "MoneyTrack", tagline: "Every dollar counts." },
+    coverTitle: "MoneyTrack",
+    background: stageWallpaper,
     theme: "cashflow",
   },
 ];

@@ -79,29 +79,64 @@ h2 { font-size: clamp(2rem, 3.6vw, 3.2rem); font-weight: 600; letter-spacing: -.
 .product-card-linked:hover { border-color: #ffffff2e; box-shadow: 0 12px 32px #0004; }
 .product-card-link:focus-visible { outline-offset: -4px; }
 .product-visual { position: relative; isolation: isolate; display: flex; flex-direction: column; min-height: 390px; padding: 1.5rem 1.75rem; }
-.product-visual-bookworm { background: radial-gradient(ellipse at 14% 100%, #183264 0%, transparent 57%), radial-gradient(ellipse at 96% 10%, #231849 0%, transparent 55%), #080b16; color: #d0d1dd; }
+.product-visual-bookworm {
+  --stage-edge-start: #a44bff;
+  --stage-edge-end: #ff48bb;
+  color: #d0d1dd;
+}
 .product-visual-splitmic { background: #000; color: #e3e3db; }
-.product-visual-plants { background: radial-gradient(ellipse at 50% 55%, #4e7335 0%, #355624 53%, #172b16 100%); color: #e0ead8; }
-.product-visual-cashflow { background: radial-gradient(ellipse at 87% 100%, #263921 0%, transparent 64%), radial-gradient(ellipse at 8% 0%, #333019 0%, transparent 58%), #090f0a; color: #e5ece8; }
+.product-visual-plants {
+  --stage-edge-start: #5be041;
+  --stage-edge-end: #b5f64b;
+  color: #e0ead8;
+}
+.product-visual-cashflow {
+  --stage-edge-start: #a4ed43;
+  --stage-edge-end: #ffbc38;
+  color: #e5ece8;
+}
 .product-background { z-index: -2; object-fit: cover; }
+.product-visual:is(.product-visual-bookworm, .product-visual-plants, .product-visual-cashflow) {
+  background: #000;
+}
+.product-visual:is(.product-visual-bookworm, .product-visual-plants, .product-visual-cashflow) .product-background {
+  object-fit: fill;
+  filter: grayscale(1) brightness(2.35);
+}
+.product-visual:is(.product-visual-bookworm, .product-visual-plants, .product-visual-cashflow)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(112deg, var(--stage-edge-start), var(--stage-edge-end));
+  mix-blend-mode: multiply;
+}
 .product-caption { display: flex; justify-content: space-between; gap: 1rem; font-size: .6875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 .product-caption span:last-child { opacity: .7; font-variant-numeric: tabular-nums; }
 .product-brand { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 315px; padding-top: 1rem; }
 .product-logo { display: block; width: min(100%, 290px); height: auto; object-fit: contain; }
 .product-visual-splitmic .product-logo { mix-blend-mode: screen; }
-.product-cover-lockup { width: 100%; display: grid; justify-items: center; gap: .45rem; text-align: center; }
+.product-cover-lockup { position: relative; width: 100%; display: grid; justify-items: center; gap: .45rem; text-align: center; }
 .product-cover-mark { display: block; width: min(38%, 144px); height: auto; }
 .product-visual-cashflow .product-cover-mark { mix-blend-mode: screen; filter: contrast(1.12); transform: scale(1.22); }
 .product-cover-title { font-size: clamp(1.75rem, 5vw, 3rem); font-weight: 750; line-height: 1.05; letter-spacing: -.035em; color: #f5f5f5; }
 .product-visual-bookworm .product-cover-title { background: linear-gradient(100deg, #32d5ff, #a68aff 56%, #ff63d6); background-clip: text; color: transparent; }
 .product-cover-tagline { font-size: .9375rem; }
+.product-visual-splitmic .product-cover-tagline,
+.product-visual-plants .product-cover-tagline {
+  position: absolute;
+  inset-inline: 1rem;
+  color: #f5f5f5;
+}
+.product-visual-splitmic .product-cover-tagline { top: 82%; }
+.product-visual-plants .product-cover-tagline { top: 94%; }
 .product-visual-plants { padding-inline: 0; }
 .product-visual-plants .product-caption { margin-inline: 1.75rem; }
 .product-artwork {
   display: block;
   width: 100%;
   height: auto;
-  mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent), linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent), linear-gradient(to bottom, transparent, black 19%, black 82%, transparent);
   mask-composite: intersect;
 }
 .product-name-display { font-size: clamp(2.5rem, 4vw, 3.5rem); letter-spacing: -.04em; font-weight: 600; line-height: 1.1; text-align: center; max-width: 320px; }
